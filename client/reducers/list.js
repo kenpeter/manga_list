@@ -1,9 +1,9 @@
 import { LIST } from "../actions/types";
+import axios from "axios";
 
 const initState = {
-  list: []
+  list: {}
 };
-
 
 // able to fire
 export default function list(state = initState, action = {}) {

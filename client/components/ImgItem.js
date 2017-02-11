@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 
-export default class ImgItem extends Component {
+class ImgItem extends Component {
+  constructor(props) {
+    super(props);
+    
+    
+  }
+
   render() {
     return (
-      <div>Single item</div>
+      <div>
+        title: {this.props.title}, hit: {this.props.hit}
+      </div>
       
     );
   }
 }
+
+export default ImgItem;
