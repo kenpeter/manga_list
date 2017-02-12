@@ -70,7 +70,6 @@ class ImgList extends Component {
     
     return (
       <div>
-        <h2>img list</h2>
         { myList }
       </div>
     );

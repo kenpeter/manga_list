@@ -5,6 +5,8 @@ const webpack = require('webpack');
 // path
 const path = require('path');
 
+//
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 // module exports
 module.exports = {
@@ -15,7 +17,7 @@ module.exports = {
     // webpack-hot-dev-server
     "webpack/hot/dev-server",
     // ./scripts/index.js
-    "./client/index"
+    "./client/index.js"
   ],
   
   // output, virtual output
@@ -53,9 +55,11 @@ module.exports = {
         // include, means include dirs....?
         //include: path.join(__dirname, 'scripts')
         include: path.join(__dirname, 'client')
-      }
-    
+      },
+      
+      { test: /\.css$/, loader: "style-loader!css-loader" }
+      
     ]
+    
   }
-
 };

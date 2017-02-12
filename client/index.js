@@ -8,7 +8,7 @@ import promise from "redux-promise-middleware";
 
 import rootReducer from "./rootReducer";
 import App from './components/App';
-
+import styles from "./assets/css/style.css";
 
 const store = createStore(
   rootReducer,

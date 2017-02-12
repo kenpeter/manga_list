@@ -8,7 +8,7 @@ export default class App extends Component {
       <div>
         {/* Container it transforms */}
         <Container>
-          <h1>Hello, World?</h1>
+          <h1 className="myTitle">Manga list from mangaeden.com</h1>
           <ImgList />
         </Container>
       </div>

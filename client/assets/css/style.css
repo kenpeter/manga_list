@@ -1,0 +1,7 @@
+.myTitle {
+  
+}
+
+.column > .column {
+  border: 1px solid #ccc;
+}
