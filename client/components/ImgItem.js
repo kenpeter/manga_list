@@ -10,7 +10,8 @@ class ImgItem extends Component {
   render() {
     return (
       <div>
-        title: {this.props.title}, hit: {this.props.hit}
+        <img src={this.props.imgUrl} />
+        <p>title: {this.props.title}, hit: {this.props.hit}</p>
       </div>
       
     );
