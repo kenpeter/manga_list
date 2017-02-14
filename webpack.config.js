@@ -25,7 +25,7 @@ module.exports = {
     // path, output to current dir
     path: __dirname,  
     filename: "bundle.js", // __dirname/bundle.js
-    publicPath: "/static/" // load css, js, etc
+    publicPath: "/" // load css, js, etc
   },
   
   // resolve file extension
