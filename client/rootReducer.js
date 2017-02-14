@@ -1,10 +1,7 @@
 import { combineReducers } from 'redux';
-import list from "./reducers/list";
+import loadMore from "./reducers/loadMore";
 
 // any new reducers need to add here.
 export default combineReducers({
-  list
+  loadMore
 });
- 
-
-

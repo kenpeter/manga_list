@@ -1,1 +1,1 @@
-export const LIST = 'LIST';
+export const MORE_LIST = 'MORE_LIST';

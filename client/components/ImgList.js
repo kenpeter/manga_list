@@ -3,37 +3,38 @@ import { connect } from "react-redux";
 import { Grid, Image } from 'semantic-ui-react';
 import ImgItem from "./ImgItem";
 
-import getMangaList from "../actions/getMangaList";
+import loadMore from "../actions/loadMore";
 
 class ImgList extends Component {
 
   constructor(props) {
     super(props);
+    
+  }
   
-    this.props.getMangaList();
+  componentWillMount() {
+    // fire action
+    this.props.loadMore();
   }
 
 
-  // why render called twice
-  // 1. it is empty value in reducer
-  // 2. getMangaList actually fires and dispatch an action. This causes re-render.
+
   render() {
     
-    /*
-    let output = this.props.propList.map((value, key) => {
-      console.log(value);
-    });
-    */
+    //test
+    console.log("-- render --");
+    console.log(this.props.propList);
+    
     
     let myList;
     
     // take a while to get data
-    if(this.props.propList.list.data === undefined) {
+    if(this.props.propList.length === 0) {
       //console.log("no there yet");
       myList = "Loading...................";
     }
     else {
-      let manga = this.props.propList.list.data.manga;
+      let manga = this.props.propList;
       //console.log(this.props.propList.list.data.manga);
       let tmpMyList = manga.map((val, key) => {
       
@@ -78,9 +79,14 @@ class ImgList extends Component {
 
 function mapStateToProps(state) {
 
-  return { 
-    propList: state.list
+  console.log("-- start --");
+  console.log(state);
+
+  return {
+    propLoadingMore: state.loadMore.loadingMore,
+    // state, reducer, prop
+    propList: state.loadMore.list
   };
 }
 
-export default connect(mapStateToProps, { getMangaList })(ImgList);
+export default connect(mapStateToProps, { loadMore })(ImgList);
