@@ -1,5 +1,5 @@
 // http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
-var Webpack = require('webpack');
+var webpack = require('webpack');
 var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var buildPath = path.resolve(__dirname, 'public', 'build');
@@ -14,6 +14,7 @@ var config = {
     path: buildPath,
     filename: 'bundle.js'
   },
+  
   module: {
     loaders: [{
       test: /\.js$/,
@@ -23,7 +24,18 @@ var config = {
       test: /\.css$/,
       loader: 'style!css'
     }]
-  }
+  },
+  
+  // https://github.com/gaearon/react-transform-hmr/issues/38#issuecomment-164359991
+  plugins: [
+    // https://facebook.github.io/react/docs/optimizing-performance.html#use-the-production-build
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin()
+  ]
 };
 
 module.exports = config;
