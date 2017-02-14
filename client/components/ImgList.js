@@ -18,6 +18,21 @@ class ImgList extends Component {
   }
 
 
+  componentDidMount() {
+    let self = this;
+    $( document ).ready(function(){
+    
+      // https://stackoverflow.com/questions/3898130/check-if-a-user-has-scrolled-to-the-bottom
+      $(window).scroll(function() {
+        if($(window).scrollTop() + $(window).height() > $(document).height() - 500) {
+          // kind of working
+          self.props.loadMore();
+        }
+      });
+      
+    });
+  }
+
 
   render() {
     
