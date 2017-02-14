@@ -22,8 +22,8 @@ class ImgList extends Component {
   render() {
     
     //test
-    console.log("-- render --");
-    console.log(this.props.propList);
+    //console.log("-- render --");
+    //console.log(this.props.propList);
     
     
     let myList;
@@ -58,7 +58,7 @@ class ImgList extends Component {
               href={mangaUrl}
               target='_blank'
             />
-            <div>{val.t}, {val.h}</div>
+            <div>{key}, {val.t}, {val.h}</div>
           </Grid.Column>
         )  
       });
@@ -79,8 +79,8 @@ class ImgList extends Component {
 
 function mapStateToProps(state) {
 
-  console.log("-- start --");
-  console.log(state);
+  //console.log("-- start --");
+  //console.log(state);
 
   return {
     propLoadingMore: state.loadMore.loadingMore,

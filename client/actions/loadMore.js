@@ -15,10 +15,14 @@ export default function loadMore() {
     
     // state, reducer, then prop
     let list = state.loadMore.list;
+    // tmp list
     let tmpList;
+    // page num 0
     let pageNum = 0;
+    // each page
     let itemCount = 500;
   
+    // nothing in list
     if(list.length == 0) {
       pageNum = 0;
     }
