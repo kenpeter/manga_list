@@ -64,7 +64,7 @@ class ImgList extends Component {
       });
       
       myList = 
-        <Grid columns={3}>
+        <Grid columns={3} className="mangaContainer">
           { tmpMyList }
         </Grid>
     }
